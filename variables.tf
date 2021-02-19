@@ -19,7 +19,7 @@ variable "role_name" {
 variable "role_path" {
   description = "Path of IAM role"
   type        = string
-  default     = "/security"
+  default     = "/security/"
 }
 
 variable "role_description" {

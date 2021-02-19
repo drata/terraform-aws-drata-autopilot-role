@@ -13,7 +13,7 @@ module "drata_autopilot_role" {
 
   # optional
   role_name = "DrataReadOnly" # defaults to "DrataAutopilotRole"
-  role_path = "/external"     # defaults to "/security"
+  role_path = "/external/"     # defaults to "/security/"
 }
 ```
 
