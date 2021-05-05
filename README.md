@@ -4,11 +4,11 @@ Terraform module to create the Drata Autopilot Role in AWS
 
 ## Usage
 
-**Note** the example below uses `ref=master`. It is recommended to pin this module to a specific version to avoid breaking changes.
+**Note** the example below uses `ref=main`. It is recommended to pin this module to a specific tag version (i.e. `ref=1.0.0`) to avoid breaking changes. See the [releases page](https://github.com/drata/terraform-aws-drata-autopilot-role/releases) for a list of published versions.
 
 ```
 module "drata_autopilot_role" {
-  source              = "git::https://github.com/drata/terraform-aws-drata-autopilot-role.git?ref=master"
+  source              = "git::https://github.com/drata/terraform-aws-drata-autopilot-role.git?ref=main"
   role_sts_externalid = "YOUR_EXTERNAL_ID"
 }
 
