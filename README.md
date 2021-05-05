@@ -24,6 +24,8 @@ After you apply this terraform, it will output the Role ARN that you can paste i
 
 ## Setup
 
+The following steps demonstrate how to connect AWS in Drata when using this terraform module.
+
 1. Add the code above to your terraform code
 2. Replace `main` in `ref=main` with the latest version from the [releases page](https://github.com/drata/terraform-aws-drata-autopilot-role/releases)
 3. In your browser, open https://app.drata.com/account-settings/connections/aws
