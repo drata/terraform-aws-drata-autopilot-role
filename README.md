@@ -29,10 +29,10 @@ The following steps demonstrate how to connect AWS in Drata when using this terr
 1. Add the code above to your terraform code
 2. Replace `main` in `ref=main` with the latest version from the [releases page](https://github.com/drata/terraform-aws-drata-autopilot-role/releases)
 3. In your browser, open https://app.drata.com/account-settings/connections/aws
-4. Copy the `Drata External ID` from step 8 and replace `YOUR_EXTERNAL_ID` in the module with the ID you copied
+4. Copy the `Drata External ID` from the AWS connection panel in Drata and replace `YOUR_EXTERNAL_ID` in the module with the ID you copied
    * Do NOT close the drawer or click the Save button at this point
-6. Back in your teminal, run `terraform init` to download/update the module
+6. Back in your terminal, run `terraform init` to download/update the module
 7. Run `terraform apply` and **IMPORTANT** review the plan output before typing `yes`
 8. When the terraform is applied, it will output the Role ARN, copy the ARN
-9. Paste the Role ARN into the field under step 20 in the AWS Connections drawer in Drata
+9. Paste the Role ARN into the Role ARN field in the AWS Connections drawer in Drata
 10. Click the `Save & Test Connection` button
