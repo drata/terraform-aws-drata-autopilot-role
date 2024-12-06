@@ -20,6 +20,26 @@ data "aws_iam_policy_document" "drata_autopilot_assume_role" {
   }
 }
 
+resource "aws_iam_policy" "drata_additional_permissions" {
+  name        = "DrataAdditionalPermissions"
+  description = "Custom policy for permissions in addition to the SecurityAudit policy"
+  path        = "/"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = [
+            "backup:ListBackupJobs",
+            "backup:ListRecoveryPointsByResource"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
+}
+
 resource "aws_iam_role" "drata" {
   name        = var.role_name
   path        = var.role_path
@@ -33,4 +53,9 @@ resource "aws_iam_role" "drata" {
 resource "aws_iam_role_policy_attachment" "security_audit" {
   role       = aws_iam_role.drata.name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
+}
+
+resource "aws_iam_role_policy_attachment" "drata_additional_permissions" {
+  role       = aws_iam_role.drata.name
+  policy_arn = aws_iam_policy.drata_additional_permissions.arn
 }
